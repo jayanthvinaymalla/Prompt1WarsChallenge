@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>VotePath AI – Education Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Outfit:wght@800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="edu-theme">
+
+<div class="watermark-seal">
+  <div style="width: 100%; height: 100%; border: 40px solid rgba(0,33,71,0.02); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Outfit'; font-size: 8rem; color: rgba(0,33,71,0.03);">BHARAT</div>
+</div>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║  SCREEN 0 – LANDING HUB      ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<div id="s-splash" class="screen active">
+  <header class="hub-header">
+    <div class="hh-brand">
+      <div style="width: 48px; height: 48px; background: var(--blue-dark); border-radius: 12px; margin-right: 15px; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Outfit'; font-weight: 800; font-size: 1.2rem;">VP</div>
+      VotePath <span>AI</span> 
+      <span class="ed-badge" style="margin-left: 10px;">Education Edition</span>
+    </div>
+    <nav class="hh-nav">
+      <a href="#" class="active" data-t="nav_home">Home</a>
+      <a href="#" data-t="nav_elec">Elections</a>
+      <a href="#" data-t="nav_edu">Education</a>
+    </nav>
+    <div class="hh-right">
+      <div class="m-lang">
+        <button class="m-lang-btn active" id="lang-en" onclick="setLang('en')" style="background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); color: var(--text-main); padding: 6px 15px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.8rem; margin-right: 5px;">EN</button>
+        <button class="m-lang-btn" id="lang-hi" onclick="setLang('hi')" style="background: transparent; border: 1px solid rgba(0,0,0,0.1); color: var(--text-main); padding: 6px 15px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.8rem;">हि</button>
+      </div>
+      <button class="prime-btn" style="padding: 12px 32px; font-size: 1rem;">Join Portal</button>
+    </div>
+  </header>
+
+  <main class="hub-hero">
+    <div class="hero-content">
+      <h1 class="hero-h1">
+        <span data-t="hero_h1a">Election Information</span> <br/>
+        <span style="color: var(--blue-prime);" data-t="hero_h1b">Simplified.</span>
+      </h1>
+      <p class="hero-p" data-t="hero_p">This Education Edition transforms voting from a complex procedure into an easy-to-understand civic encyclopedia.</p>
+      <div class="hero-btns" style="display: flex; justify-content: center; gap: 1rem;">
+        <button class="prime-btn" onclick="goScreen('s-age')" data-t="btn_how">Start Journey</button>
+        <button class="prime-btn secondary">Explore Candidates</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║  SCREEN 1 – VERIFICATION     ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<div id="s-age" class="screen">
+  <div class="flow-card">
+    <div class="flow-tag" data-t="tag_ver">01 · PROTOCOL</div>
+    <h2 class="flow-h2" data-t="age_h">Confirm Eligibility</h2>
+    <p class="flow-p" data-t="age_p">Verify your status to unlock the national educational roadmap.</p>
+    <div class="elite-cards">
+      <div class="elite-card" onclick="pickAge('eligible')">
+        <div class="ec-icon">🏛️</div>
+        <div class="ec-content">
+          <div class="ec-h" data-t="age_yes">Adult Voter (18+)</div>
+          <div class="ec-p">Full registration protocols.</div>
+        </div>
+      </div>
+      <div class="elite-card" onclick="pickAge('under')">
+        <div class="ec-icon">🎓</div>
+        <div class="ec-content">
+          <div class="ec-h" data-t="age_no">Future Voter (&lt;18)</div>
+          <div class="ec-p">Educational "Awareness" mode.</div>
+        </div>
+      </div>
+    </div>
+    <button class="sub-btn" onclick="goScreen('s-splash')">Return Home</button>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║  SCREEN 2 – TAILORING       ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<div id="s-persona" class="screen">
+  <div class="flow-card">
+    <div class="flow-tag" data-t="tag_tailor">02 · TAILORING</div>
+    <h2 class="flow-h2" data-t="pers_h">Personalize Your Hub</h2>
+    <p class="flow-p" data-t="pers_p">Your hub is customized based on your region and experience.</p>
+    <div class="profile-form">
+      <div class="form-group">
+        <label data-t="lbl_state">📍 VOTING STATE / UT</label>
+        <input type="text" id="state-input" class="elite-input" placeholder="e.g. Maharashtra, Tamil Nadu..." list="state-list" autocomplete="off"/>
+        <datalist id="state-list">
+          <option value="Andhra Pradesh"></option><option value="Arunachal Pradesh"></option>
+          <option value="Assam"></option><option value="Bihar"></option>
+          <option value="Chhattisgarh"></option><option value="Goa"></option>
+          <option value="Gujarat"></option><option value="Haryana"></option>
+          <option value="Himachal Pradesh"></option><option value="Jharkhand"></option>
+          <option value="Karnataka"></option><option value="Kerala"></option>
+          <option value="Madhya Pradesh"></option><option value="Maharashtra"></option>
+          <option value="Manipur"></option><option value="Meghalaya"></option>
+          <option value="Mizoram"></option><option value="Nagaland"></option>
+          <option value="Odisha"></option><option value="Punjab"></option>
+          <option value="Rajasthan"></option><option value="Sikkim"></option>
+          <option value="Tamil Nadu"></option><option value="Telangana"></option>
+          <option value="Tripura"></option><option value="Uttar Pradesh"></option>
+          <option value="Uttarakhand"></option><option value="West Bengal"></option>
+          <option value="Delhi"></option><option value="Jammu & Kashmir"></option>
+          <option value="Ladakh"></option><option value="Puducherry"></option>
+          <option value="Chandigarh"></option><option value="Lakshadweep"></option>
+          <option value="Andaman & Nicobar Islands"></option>
+          <option value="Dadra & Nagar Haveli"></option>
+          <option value="Daman & Diu"></option>
+        </datalist>
+      </div>
+      <div class="form-group">
+        <label data-t="lbl_exp">👤 VOTER EXPERIENCE</label>
+        <div class="choice-row">
+          <button class="choice-btn" data-persona="first" onclick="setPersona('first')">
+            <span style="font-size: 2.5rem;">🌱</span>
+            <span class="cb-text" data-t="p_first">First-time</span>
+          </button>
+          <button class="choice-btn" data-persona="returning" onclick="setPersona('returning')">
+            <span style="font-size: 2.5rem;">🔄</span>
+            <span class="cb-text" data-t="p_ret">Returning</span>
+          </button>
+        </div>
+      </div>
+      <button class="prime-btn full-w" id="btn-show-journey" onclick="validateAndLaunch()" disabled>Unlock Learning Hub</button>
+      <button class="sub-btn" onclick="goScreen('s-age')">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║  SCREEN 3 – LEARNING HUB    ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<div id="s-journey" class="screen">
+  <div class="edu-layout">
+    <aside class="edu-sidebar">
+      <div class="hh-brand" style="margin-bottom: 3rem;">VotePath <span>AI</span></div>
+      
+      <div class="rank-card">
+        <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 5px; font-weight: 800; letter-spacing: 1px;" data-t="rank_lbl">GLOBAL CITIZEN RANK</div>
+        <div class="rc-val" id="rank-val">16738</div>
+        <div style="font-size: 0.9rem; margin-top: 20px; font-weight: 800;" data-t="score_lbl">READINESS SCORE: <span id="score-val">0</span>%</div>
+        <div class="rc-bar" style="height: 6px; background: rgba(255,255,255,0.2); border-radius: 100px; margin-top: 8px; overflow: hidden;">
+          <div id="score-fill" class="rc-fill" style="width: 5%; height: 100%; background: var(--green); transition: width 0.5s;"></div>
+        </div>
+      </div>
+      
+      <div class="sidebar-category">GENERAL</div>
+      <nav class="es-nav">
+        <a href="#" onclick="goScreen('s-splash')">🏠 <span data-t="nav_home">Home</span></a>
+        <a href="#">📅 <span data-t="nav_elec">Elections</span></a>
+      </nav>
+
+      <div class="sidebar-category">EDUCATION</div>
+      <nav class="es-nav">
+        <a href="#" class="active">🎓 <span data-t="nav_hub">Learning Hub</span></a>
+        <a href="#">📚 Civic Library</a>
+      </nav>
+
+      <div class="sidebar-category">ACCOUNT</div>
+      <nav class="es-nav">
+        <a href="#" onclick="restartApp()">⚙️ <span data-t="nav_set">Reset Portal</span></a>
+      </nav>
+    </aside>
+    
+    <main class="edu-main">
+      <header class="main-header">
+        <div style="font-weight: 800; color: var(--blue-prime); font-size: 1.1rem; background: var(--blue-soft); padding: 10px 20px; border-radius: 100px;" id="sb-profile">---</div>
+      </header>
+      <div class="main-content">
+        <h2 style="font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 4rem; color: var(--blue-dark); line-height: 1.1;">The Civic <br/>Encyclopedia</h2>
+        <div id="step-cards"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── FLOATING CHATBOT ── -->
+  <div class="chat-system">
+    <button class="chat-fab" onclick="toggleChat()">
+      <span style="font-size: 1.5rem;">🤖</span>
+      <span data-t="bot_name">VoteWise AI</span>
+    </button>
+    <div class="chat-window" id="chat-window">
+      <div class="cw-header">
+        <div class="cw-title">
+          <div style="font-size: 1.5rem; margin-right: 10px;">🤖</div>
+          <div>
+            <div class="cw-h" data-t="bot_name">VoteWise AI</div>
+            <div class="cw-s">Civic Intelligence Engine</div>
+          </div>
+        </div>
+        <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">×</button>
+      </div>
+      <div class="cw-body" id="ap-messages"></div>
+      <div class="cw-suggestions" id="ap-quick"></div>
+      <div class="cw-footer">
+        <input type="text" id="ap-input" data-t-ph="chat_ph" placeholder="Ask about Article 326..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+        <button class="cw-send" onclick="sendMsg()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
